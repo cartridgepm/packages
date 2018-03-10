@@ -1,0 +1,22 @@
+image: 'node:alpine'
+alias: 'node'
+name: 'node:latest'
+version: '0.0.1-alpha'
+dir: $DIR
+install:
+ steps:
+ 	- 'cp -r /usr/local $DIR/local'
+docker:
+ args:
+  rm: true
+  it: true
+  volumes:
+    - '$DIR/local:/usr/local/lib/node_modules'
+    - '$DIR:/root'
+    - '$PWD:$PWD'
+  network:
+    - exposed: true
+    - mode: 'host'
+  environment:
+    - ''
+  command: 'node'
