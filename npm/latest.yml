@@ -1,6 +1,6 @@
 image: 'node:alpine'
-alias: 'node'
-name: 'node:latest'
+alias: 'npm'
+name: 'npm:latest'
 version: '0.0.1-alpha'
 dir: $DIR
 install:
