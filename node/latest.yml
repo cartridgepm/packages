@@ -5,18 +5,17 @@ version: '0.0.1-alpha'
 dir: $DIR
 install:
  steps:
- 	- 'cp -r /usr/local $DIR/'
 docker:
  args:
   rm: true
   it: true
   volumes:
-    - '$DIR/local:/usr/local'
     - '$DIR:/root'
     - '$PWD:$PWD'
+  workdir: '$PWD'
   network:
-    - exposed: true
-    - mode: 'host'
+   exposed: true
+   mode: 'host'
   environment:
     - ''
   command: 'node'
