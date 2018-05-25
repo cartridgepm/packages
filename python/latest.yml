@@ -3,6 +3,7 @@ alias: 'python'
 name: 'python:latest'
 version: '0.0.1-alpha'
 dir: $DIR
+dir_name: python
 install:
  steps:
 docker:
@@ -17,5 +18,5 @@ docker:
    exposed: true
    mode: 'host'
   environment:
-    - ''
+    - "PYTHONPATH=/root/site-packages"
   command: 'python'

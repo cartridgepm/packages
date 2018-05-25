@@ -1,8 +1,9 @@
 image: 'python:alpine'
-alias: 'python'
-name: 'python:latest'
+alias: 'pip'
+name: 'pip:latest'
 version: '0.0.1-alpha'
 dir: $DIR
+dir_name: python
 install:
  steps:
 docker:
@@ -17,5 +18,6 @@ docker:
    exposed: true
    mode: 'host'
   environment:
-    - ''
+    - "PYTHONPATH=/root/site-packages"
+    - "PIP_TARGET=/root/site-packages"
   command: 'pip'
