@@ -1,0 +1,21 @@
+image: 'python:alpine'
+alias: 'python'
+name: 'python:latest'
+version: '0.0.1-alpha'
+dir: $DIR
+install:
+ steps:
+docker:
+ args:
+  rm: true
+  it: true
+  volumes:
+    - '$DIR:/root'
+    - '$PWD:$PWD'
+  workdir: '$PWD'
+  network:
+   exposed: true
+   mode: 'host'
+  environment:
+    - ''
+  command: 'pip'
