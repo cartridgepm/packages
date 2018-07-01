@@ -4,8 +4,8 @@ name: 'npm:latest'
 version: '0.0.1-alpha'
 dir: nodejs
 install:
- setenv:
-  - 'PATH=$PATH:$HOME/.cpm/nodejs/.global/bin'
+ instructions:
+  - 'Add this to your bash profile file\n~/.bash_profile for MacOS\n~/.bashrc for Ubuntu\nexport PATH=$PATH:$HOME/.cpm/nodejs/.global/bin'
 docker:
  args:
   rm: true
