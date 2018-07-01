@@ -2,8 +2,7 @@ image: 'python:alpine'
 alias: 'pip'
 name: 'pip:latest'
 version: '0.0.1-alpha'
-dir: $DIR
-dir_name: python
+dir: python
 install:
  steps:
 docker:
