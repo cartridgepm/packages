@@ -5,7 +5,8 @@ version: '0.0.1-alpha'
 dir: nodejs
 install:
  instructions:
-  - 'Add this to your bash profile file\n~/.bash_profile for MacOS\n~/.bashrc for Ubuntu\nexport PATH=$PATH:$HOME/.cpm/nodejs/.global/bin'
+  warn:
+      - "Warning:\nAdd this to your bash profile file\n~/.bash_profile for MacOS ~/.bashrc for Ubuntu\n\nexport PATH=$PATH:$HOME/.cpm/nodejs/.global/bin\n"
 docker:
  args:
   rm: true
