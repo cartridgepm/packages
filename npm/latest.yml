@@ -2,20 +2,23 @@ image: 'node:alpine'
 alias: 'npm'
 name: 'npm:latest'
 version: '0.0.1-alpha'
-dir: $DIR
+dir: nodejs
 install:
- steps:
+ instructions:
+  warn:
+      - "Warning:\nAdd this to your bash profile file\n~/.bash_profile for MacOS ~/.bashrc for Ubuntu\n\nexport PATH=$PATH:$HOME/.cpm/nodejs/.global/bin\n"
 docker:
  args:
   rm: true
   it: true
   volumes:
-    - '$DIR:/root'
+    - '$DIR:$DIR'
     - '$PWD:$PWD'
   workdir: '$PWD'
   network:
    exposed: true
    mode: 'host'
   environment:
-    - ''
+    - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$DIR/.global/bin'
+    - 'NPM_CONFIG_PREFIX=$DIR/.global'
   command: 'npm'

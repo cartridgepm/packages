@@ -2,7 +2,7 @@ image: 'node:9.8-alpine'
 alias: 'node'
 name: 'node:9.8.0'
 version: '0.0.1-alpha'
-dir: $DIR
+dir: nodejs
 install:
  steps:
 docker:
@@ -10,12 +10,13 @@ docker:
   rm: true
   it: true
   volumes:
-    - '$DIR:/root'
+    - '$DIR:$DIR'
     - '$PWD:$PWD'
   workdir: '$PWD'
   network:
    exposed: true
    mode: 'host'
   environment:
-    - ''
+    - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$DIR/.global/bin'
+    - 'NPM_CONFIG_PREFIX=$DIR/.global'
   command: 'node'
