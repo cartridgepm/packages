@@ -1,0 +1,19 @@
+image: 'cartridgepm/wget'
+alias: 'wget'
+name: 'wget:latest'
+version: '0.0.1-alpha'
+dir: wget
+install:
+docker:
+ args:
+  rm: true
+  it: true
+  volumes:
+    - '$DIR:$DIR'
+    - '$PWD:$PWD'
+  workdir: '$PWD'
+  network:
+   exposed: true
+   mode: 'host'
+  environment:
+  command: 'wget'
