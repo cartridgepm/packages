@@ -1,8 +1,8 @@
-image: 'python:2.7.15-alpine'
-alias: 'pip'
-name: 'pip:latest'
+image: 'python:3.7.0-alpine'
+alias: 'pip3'
+name: 'pip3:latest'
 version: '0.0.1-alpha'
-dir: python
+dir: python3
 install:
  steps:
 docker:
@@ -19,4 +19,4 @@ docker:
   environment:
     - "PYTHONPATH=/root/site-packages"
     - "PIP_TARGET=/root/site-packages"
-  command: 'pip'
+  command: 'pip3'

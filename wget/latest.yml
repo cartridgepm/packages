@@ -1,21 +1,19 @@
-image: 'python:3.7.0-alpine'
-alias: 'python3'
-name: 'python3:latest'
+image: 'cartridgepm/wget'
+alias: 'wget'
+name: 'wget:latest'
 version: '0.0.1-alpha'
-dir: python3
+dir: wget
 install:
- steps:
 docker:
  args:
   rm: true
   it: true
   volumes:
-    - '$DIR:/root'
+    - '$DIR:$DIR'
     - '$PWD:$PWD'
   workdir: '$PWD'
   network:
    exposed: true
    mode: 'host'
   environment:
-    - "PYTHONPATH=/root/site-packages"
-  command: 'python3'
+  command: 'wget'
