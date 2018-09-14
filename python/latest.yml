@@ -1,8 +1,8 @@
 image: 'python:3.7.0-alpine'
-alias: 'python'
-name: 'python:latest'
+alias: 'python3'
+name: 'python3:latest'
 version: '0.0.1-alpha'
-dir: python
+dir: python3
 install:
  steps:
 docker:
@@ -18,4 +18,4 @@ docker:
    mode: 'host'
   environment:
     - "PYTHONPATH=/root/site-packages"
-  command: 'python'
+  command: 'python3'

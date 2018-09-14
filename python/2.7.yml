@@ -1,6 +1,6 @@
 image: 'python:2.7.15-alpine'
-alias: 'pip'
-name: 'pip:latest'
+alias: 'python'
+name: 'python:latest'
 version: '0.0.1-alpha'
 dir: python
 install:
@@ -18,5 +18,4 @@ docker:
    mode: 'host'
   environment:
     - "PYTHONPATH=/root/site-packages"
-    - "PIP_TARGET=/root/site-packages"
-  command: 'pip'
+  command: 'python'
