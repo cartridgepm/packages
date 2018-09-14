@@ -3,6 +3,6 @@ FROM alpine
 MAINTAINER Mohamed Mahrous <cpm.sh>
 
 RUN apk update
-RUN apk add wget
+RUN apk add curl
 
-CMD wget
+CMD curl
